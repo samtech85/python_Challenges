@@ -1,5 +1,6 @@
 from turtle import *
 import turtle
+import random
 
 # turtle
 
@@ -77,6 +78,7 @@ turtle.exitonclick()'''
 
 # #####################################################################
 # 065
+
 '''
 # One
 turtle.left(90)
@@ -123,10 +125,40 @@ turtle.hideturtle()
 
 turtle.exitonclick()
 '''
+######################################################################
+# 066
 
+'''
+turtle.pensize(3)
 
+for i in range(0,8):
+    turtle.color(random.choice(["red", "blue", "yellow", "green", "pink", "orange"]))
+    turtle.forward(50)
+    turtle.right(45)
+turtle.exitonclick()
+'''
+######################################################################
+# 067
 
-# a = 105
-# b = int(input("ameriken: "))
-# c = a * b/ 5
-# print(int(c), "dola ayisyen.")
+'''for x in range(0,10):
+    # turtle.color(random.choice(["red", "blue", "yellow", "green", "pink", "orange","black"]))
+    for i in range(0,8):
+        turtle.forward(50)
+        turtle.right(45)
+    turtle.right(36)
+'''
+
+######################################################################
+# 068
+
+'''
+lines = random.randint(5,20)
+
+for x in range(0,lines):
+    length = random.randint(25,100)
+    rotate = random.randint(1, 365)
+    turtle.forward(length)
+    turtle.right(rotate)
+
+turtle.exitonclick()
+'''
