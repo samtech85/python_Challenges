@@ -37,7 +37,7 @@ turtle.exitonclick()
 # ####################################################################
 # 063
 
-'''turtle.color("black", "green")
+turtle.color("black", "green")
 turtle.begin_fill()
 for i in range(0,4):
     turtle.forward(70)
@@ -66,7 +66,7 @@ for i in range(0, 4):
 turtle.end_fill()
 
 turtle.exitonclick()
-'''
+
 
 # #####################################################################
 # 064
