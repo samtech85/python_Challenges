@@ -1,6 +1,6 @@
 # Reading and writing to a .csv file
 import csv
-
+import random
 ######################################################################
 # 111
 
@@ -92,8 +92,74 @@ x += 1'''
 
 ######################################################################
 # 116
+'''
+file = list(csv.reader(open("Books.csv")))
+booklist = []
+for row in file:
+    booklist.append(row)
 
+x = 0
+for row in booklist:
+    display = x, booklist[x]
+    print(display)
+    x+=1
+
+getrid = int(input("Enter a row number to delete: "))
+del booklist[getrid]
+
+x = 0
+for row in booklist:
+    display = x, booklist[x]
+    print(display)
+    x += 1
+    alter = int(input("Enter a row number to alter: "))
+
+x = 0
+for row in  booklist:
+    display = x, booklist[alter][x]
+    print(display)
+    x += 1
+
+part = int(input("Which part do you wat to change? "))
+newdata = input("Enter new data: ")
+booklist[alter][part] = newdata
+print(booklist[alter])
+
+file = open("Books.csv", 'w')
+x = 0
+for row in booklist:
+    newrecord = booklist[x][0] + ", " + booklist[x][1] +", " + booklist[x][2] + "\n"
+
+    file.write(newrecord)
+    x = x + 1
+    file.close()'''
 
 
 ######################################################################
 # 117
+
+score = 0
+name = input("What is your name: ")
+q1_num1 = random.randint(10,50)
+q1_num2 = random.randint(10,50)
+
+question1 = str(q1_num1) + " + " + str(q1_num2) + " = "
+ans1 = int(input(question1))
+realans1 = q1_num1 + q1_num2
+if ans1 == realans1:
+    score = score + 1
+q2_num1 = random.randint(10, 50)
+q2_num2 = random.randint(10, 50)
+
+question2 = str(q2_num1) + " + " + str(q2_num2) + " = "
+ans2 = int(input(question2))
+realans2 = q2_num1 + q2_num2
+if ans2 == realans2:
+    score += 1
+
+
+file = open("QuizScore.csv", "a")
+newrecord = name + ", " + question1 + "," + str(ans1) + ", " + question2 + ", " + str(score) + "\n"
+
+file.write(str(newrecord))
+file.close()
